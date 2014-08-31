@@ -3,8 +3,11 @@
 
     $( document ).on( "ready", function(){
 
+        var $counter = $('#counter');
+
         cordova.plugins.barcodeScanner.scan(
           function (result) {
+                $counter.text( result.text );
               alert("We got a barcode\n" +
                     "Result: " + result.text + "\n" +
                     "Format: " + result.format + "\n" +
