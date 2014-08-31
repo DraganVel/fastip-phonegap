@@ -2,6 +2,20 @@
     "use strict";
 
     $( document ).on( "ready", function(){
+
+        cordova.plugins.barcodeScanner.scan(
+          function (result) {
+              alert("We got a barcode\n" +
+                    "Result: " + result.text + "\n" +
+                    "Format: " + result.format + "\n" +
+                    "Cancelled: " + result.cancelled);
+          }, 
+          function (error) {
+              alert("Scanning failed: " + error);
+          }
+        );
+
+/*
         var $counter = $('#counter');
         $counter.text( 'I wanna be a billionaire!');
 
@@ -15,6 +29,8 @@
                 // console.log('screwed up!');
             });
     });
+
+*/
 
     $( document ).on( "deviceready", function(){
         StatusBar.overlaysWebView( false );
