@@ -5,7 +5,7 @@
         var $counter = $('#counter');
         $counter.text( 'I wanna be a billionaire!');
 
-        $.get( '/counter', {} )
+        $.get( 'http://192.168.1.40:4000/counter', {} )
             .done(function ( data ) {
                 // console.log('should have gotten data');
                 // console.log( data.counter );
